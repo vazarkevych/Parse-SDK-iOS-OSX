@@ -30,9 +30,10 @@ let package = Package(
             resources: [.process("Resources")],
             publicHeadersPath: "Source",
             headers: .headers(
-        private: ["Internal"]
-    ),
-            cSettings: [.headerSearchPath("Internal/**")]
+                public: ["Source"],
+                private: ["../Internal"]
+            ),
+            cSettings: [.headerSearchPath("../Internal")]
         ),
         .target(
             name: "ParseLiveQuery",
