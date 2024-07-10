@@ -29,11 +29,7 @@ let package = Package(
             exclude: ["Resources/Parse-tvOS.Info.plist", "Resources/Parse-iOS.Info.plist", "Resources/Parse-OSX.Info.plist", "Resources/Parse-watchOS.Info.plist"],
             resources: [.process("Resources")],
             publicHeadersPath: "Source",
-            headers: .headers(
-                public: ["Source"],
-                private: ["../Internal"]
-            ),
-            cSettings: [.headerSearchPath("../Internal")]
+            cSettings: [.headerSearchPath("Internal/PFAssert.h")]
         ),
         .target(
             name: "ParseLiveQuery",
