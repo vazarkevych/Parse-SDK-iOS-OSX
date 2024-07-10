@@ -26,13 +26,11 @@ let package = Package(
             name: "ParseCore",
             dependencies: [.product(name: "Bolts", package: "Bolts-ObjC")],
             path: "Parse/Parse",
+            sources: ["Internal/**"],
             exclude: ["Resources/Parse-tvOS.Info.plist", "Resources/Parse-iOS.Info.plist", "Resources/Parse-OSX.Info.plist", "Resources/Parse-watchOS.Info.plist"],
             resources: [.process("Resources")],
             publicHeadersPath: "Source",
-            cSettings: [.headerSearchPath("Internal")],
-            linkerSettings: [
-                             .linkedLibrary("libc++"),
-                             ]
+            cSettings: [.headerSearchPath("Internal/**")]
         ),
         .target(
             name: "ParseLiveQuery",
