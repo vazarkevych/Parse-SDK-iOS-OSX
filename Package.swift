@@ -30,7 +30,7 @@ let package = Package(
             resources: [.process("Resources")],
             publicHeadersPath: "Source",
             headers: .headers(
-        private: ["Internal/**"]
+        private: ["Internal"]
     ),
             cSettings: [.headerSearchPath("Internal/**")]
         ),
